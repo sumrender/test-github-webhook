@@ -14,13 +14,11 @@ app.post('/webhook', (req, res) => {
         const branch = payload.ref.split('/').pop();
         console.log(`Received push event for branch: ${branch}`);
 
-        // Check if it's the branch you want to trigger the script for
-        const targetBranch = 'main'; // Change to your branch name
+        const targetBranch = 'main';
         if (branch === targetBranch) {
             console.log(`Executing custom script for ${branch} branch...`);
 
-            // Execute your custom script
-            exec('sh /path/to/your/script.sh', (error, stdout, stderr) => {
+            exec(`${__dirname}/script.sh`, (error, stdout, stderr) => {
                 if (error) {
                     console.error(`Error executing script: ${error.message}`);
                     return res.status(500).send('Failed to execute script');
