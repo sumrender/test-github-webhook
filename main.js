@@ -8,7 +8,6 @@ app.use(express.json());
 
 app.post('/webhook', (req, res) => {
     const payload = req.body;
-    console.log(payload);
 
     if (payload && payload.ref) {
         const branch = payload.ref.split('/').pop();
