@@ -6,8 +6,8 @@ set -x
 # Go back one directory
 cd ..
 
-# Navigate to blog-meme-backend directory
-cd blog-memes-backend || { echo "Failed to enter blog-memes-backend directory"; exit 1; }
+# Navigate to my-repo directory
+cd my-repo || { echo "Failed to enter my-repo directory"; exit 1; }
 
 # Pull the latest changes from the main branch
 echo "Pulling the latest changes from origin/main..."
